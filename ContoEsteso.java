@@ -36,15 +36,17 @@ public class ContoEsteso extends ContoBancario {
     }
 
     @Override
-    public int prelievo(int soldi) {
+    public int prelievo() {
+        int soldi;
+        bilancio = bilacio + fido;
         do {
             soldi = Integer.parseInt("Inserire i soldi da prelevare");
-            if (bilancio + fido > soldi) {
+            if (bilancio > soldi) {
                 bilancio = bilancio - soldi;
             } else {
                 System.out.println("I soldi da prelevare superano il suo conto.");
             }
-        } while (bilancio + fido < soldi);
+        } while (bilancio < soldi);
         return bilancio;
     }
 
