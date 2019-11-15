@@ -38,6 +38,7 @@ public class ContoEsteso extends ContoBancario {
     @Override
     public int prelievo() {
         int soldi;
+        int scelta = 0;
         bilancio = bilacio + fido;
         do {
             soldi = Integer.parseInt("Inserire i soldi da prelevare");
@@ -46,7 +47,8 @@ public class ContoEsteso extends ContoBancario {
             } else {
                 System.out.println("I soldi da prelevare superano il suo conto.");
             }
-        } while (bilancio < soldi);
+            scelta = JOptionPane.showConfirmDialog(null,"Vuoi continuare a prelevare i soldi ?");
+        } while (scelta == 0);
         return bilancio;
     }
 
