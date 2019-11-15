@@ -35,7 +35,8 @@ public class ContoBancario {
         return bilancio;
     }
 
-    public int prelievo(int soldi) {
+    public int prelievo() {
+        int soldi;
         do {
             soldi = Integer.parseInt("Inserire i soldi da prelevare");
             if (bilancio > soldi) {
@@ -47,8 +48,8 @@ public class ContoBancario {
         return bilancio;
     }
 
-    public int deposito(int soldi) {
-        
+    public int deposito() {
+        int soldi;
         soldi = Integer.parseInt("Inserire i soldi da depositare");
         bilancio = bilancio + soldi;
         return bilancio;
