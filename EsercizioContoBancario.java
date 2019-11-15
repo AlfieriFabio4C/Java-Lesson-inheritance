@@ -19,9 +19,9 @@ public class EsercizioContoBancario {
         System.out.println(a.getBilancio());
         System.out.println(a.getNumeroConto());
         System.out.println(a.getFido());
-        a.deposito(30);
+        a.deposito();
         System.out.println(a.getBilancio());
-        a.prelievo(50);
+        a.prelievo();
         System.out.println(a.getBilancio());
     }
 }
