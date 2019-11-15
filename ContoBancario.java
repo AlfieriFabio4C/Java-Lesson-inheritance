@@ -37,6 +37,7 @@ public class ContoBancario {
 
     public int prelievo() {
         int soldi;
+        int scelta = 0;
         do {
             soldi = Integer.parseInt("Inserire i soldi da prelevare");
             if (bilancio > soldi) {
@@ -44,7 +45,8 @@ public class ContoBancario {
             } else {
                 System.out.println("I soldi da prelevare superano il suo conto.");
             }
-        } while (bilancio < soldi);
+            scelta = JOptionPane.showConfirmDialog(null,"Vuoi continuare a prelevare i soldi ?");
+        } while (scelta == 0);
         return bilancio;
     }
 
