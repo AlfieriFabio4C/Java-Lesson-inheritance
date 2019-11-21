@@ -5,6 +5,8 @@
  */
 package eserciziocontobancario;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alfieri.fabio
@@ -36,12 +38,13 @@ public class ContoBancario {
     }
 
     public int prelievo() {
-        int soldi;
+        int soldi; 
         int scelta = 0;
         do {
             soldi = Integer.parseInt("Inserire i soldi da prelevare");
             if (bilancio > soldi) {
                 bilancio = bilancio - soldi;
+                System.out.println(bilancio);
             } else {
                 System.out.println("I soldi da prelevare superano il suo conto.");
             }
@@ -52,7 +55,7 @@ public class ContoBancario {
 
     public int deposito() {
         int soldi;
-        soldi = Integer.parseInt("Inserire i soldi da depositare");
+        soldi = Integer.parseInt(JOptionPane.showInputDialog("Inserire i soldi da depositare"));
         bilancio = bilancio + soldi;
         return bilancio;
     }
