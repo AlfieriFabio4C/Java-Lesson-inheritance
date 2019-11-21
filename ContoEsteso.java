@@ -5,6 +5,8 @@
  */
 package eserciziocontobancario;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alfieri.fabio
@@ -38,12 +40,13 @@ public class ContoEsteso extends ContoBancario {
     @Override
     public int prelievo() {
         int soldi;
+        bilancio = bilancio + fido;
         int scelta = 0;
-        bilancio = bilacio + fido;
         do {
-            soldi = Integer.parseInt("Inserire i soldi da prelevare");
+            soldi = Integer.parseInt(JOptionPane.showInputDialog("Inserire i soldi da prelevare"));
             if (bilancio > soldi) {
                 bilancio = bilancio - soldi;
+                System.out.println(bilancio);
             } else {
                 System.out.println("I soldi da prelevare superano il suo conto.");
             }
